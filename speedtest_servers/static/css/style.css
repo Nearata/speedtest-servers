@@ -1,0 +1,28 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: hsl(0, 0%, 100%);
+}
+
+a.header-title {
+    text-decoration: none;
+}
+
+.card {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px hsl(201.3, 58.5%, 89.6%);
+}
+
+.site-logo {
+    width: 2.5rem;
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: .895rem;
+}
+
+#update-table {
+    text-transform: uppercase;
+    font-weight: 700;
+}

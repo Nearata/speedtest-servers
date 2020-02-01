@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block head_title %} {{ page_title }} {% endblock %}
+
+{% block main_content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form id="admin-tools">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" class="form-control" type="name">
+                </div>
+                <div class="form-group">
+                    <label for="access-key">Access Key</label>
+                    <input id="access-key" class="form-control" type="password">
+                </div>
+                <div class="form-group d-none">
+                    <label for="actions">Action</label>
+                    <select id="actions" class="form-control form-control-lg">
+                        <option>Create / Recreate / Update</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

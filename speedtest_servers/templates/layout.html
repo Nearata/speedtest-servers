@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block head_title %}{% endblock %} :: Speedtest Servers</title>
+        <meta name="google-site-verification" content="3bojd5g0d2olpcRzDInfeQ0b5Pev1LGgc44VbM0kJaQ" />
+        <meta name="description" content="List of all servers on speedtest.net">
+        <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+        {% assets "css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+        {% endassets %}
+    </head>
+    <body>
+        <header id="header">
+            <div class="container text-center mt-2">
+                <a class="header-title" href="{{ url_for('main.home') }}">
+                    <h1>
+                        <img class="site-logo" src="{{ url_for('static', filename='images/server-solid.svg') }}" alt="Site logo">
+                        <small class="text-muted">Speedtest Servers</small>
+                    </h1>
+                </a>
+            </div>
+        </header>
+        <main id="main" class="mt-4">
+            {% block main_content %}{% endblock %}
+        </main>
+        <footer id="footer" class="mt-3">
+            <div class="container text-center">
+                <div class="disclaimer">
+                    <p><span class="text-muted">This website is not affiliated with Ookla, LLC.</span><br>Server icon made by <a href="https://fontawesome.com/license" target="_blank">FontAwesome</a></p>
+                </div>
+            </div>
+        </footer>
+        {% assets "js" %}
+        <script src="{{ ASSET_URL }}"></script>
+        {% endassets %}
+    </body>
+</html>

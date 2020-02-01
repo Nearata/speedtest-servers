@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block head_title %}{{ page_title }}{% endblock %}
+
+{% block main_content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-filters d-flex">
+                <div class="filter-0 flex-fill"></div>
+                <div class="filter-1 flex-fill pl-2"></div>
+                <div class="filter-2 flex-fill pl-2"></div>
+                <div class="filter-3 flex-fill pl-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center my-4">
+        <p class="mb-0">Last update: <span class="text-muted">{{ updated_at }}</span></p>
+        <p id="next-update-available" class="mb-0">Next update available: <span class="text-muted">{{ next_update_available }}</span></p>
+        <button id="update-table" class="btn btn-primary mt-2" type="button">
+            Update
+        </button>
+        {% if is_updating %}
+        <small class="d-block mt-3">Update in progress...</small>
+        {% endif %}
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <table id="table" class="table table-striped" style="width:100%">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Server ID</th>
+                        <th>Provider</th>
+                        <th>Country</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
