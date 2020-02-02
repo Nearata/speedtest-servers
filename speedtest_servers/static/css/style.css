@@ -1,6 +1,6 @@
 body {
     font-family: "Roboto", sans-serif;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(228, 38%, 97%);
 }
 
 a.header-title {
@@ -25,4 +25,40 @@ a.header-title {
 #update-table {
     text-transform: uppercase;
     font-weight: 700;
+}
+
+@media (max-width: 576px) {
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        background-color: hsl(0, 0%, 97%);
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 }

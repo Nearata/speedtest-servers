@@ -18,11 +18,17 @@ $(function() {
             {targets: 0, "width": "12%"},
             {targets: [2, 3], width: "20%"}
         ],
+        createdRow: function(row, data, index) {
+            $("td", row).eq(0).attr("data-label", "id")
+            $("td", row).eq(1).attr("data-label", "provider")
+            $("td", row).eq(2).attr("data-label", "country")
+            $("td", row).eq(3).attr("data-label", "city")
+        },
         initComplete: function() {
             this.api().columns().every(function() {
                 var column = this;
                 var select = $('<select class="select2-filtered" style="width: 100%;"><option value=""></option></select>')
-                    .appendTo($(".table-filters .filter-"+column[0][0]).empty())
+                    .appendTo($(".filters .filter-"+column[0][0]).empty())
                     .on('change', function() {
                         var val = $.fn.dataTable.util.escapeRegex(
                             $(this).val()
